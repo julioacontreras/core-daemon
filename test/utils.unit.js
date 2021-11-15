@@ -333,4 +333,25 @@ describe('module:utils', function() {
 
   });
 
+  describe('#extract filename in path', function() {
+
+    it('should extract filaname from path', function(done) {
+      const filname = utils.getFilename('/a/b/c/d/myfile.txt')
+      expect(filname).to.equal('myfile.txt');
+    });
+  
+  });
+
+  describe('#create hash with string', function() {
+
+    it('should create hash with string', function(done) {
+      expect(utils.createHash('c.txt')).to.equal('15cd97356bc4e829456a857a5376151a');
+      expect(utils.createHash('myfile.txt')).to.equal('c5437df2388d74866a961080580f484a');
+      expect(utils.createHash('myfile.txt')).to.equal('c5437df2388d74866a961080580f484a');
+      expect(utils.createHash('myfile.txt')).to.equal('c5437df2388d74866a961080580f484a');
+    });
+  
+  });
+
+
 });
